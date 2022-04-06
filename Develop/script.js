@@ -2,19 +2,42 @@
 
 // Array character type variables
 
-  var lwr  = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-  var uppr = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-  var spec = ["!","@","#","$","%","^","&","*","(",")","_","-","=","+","'","{","[","}","]","|",";",":",",","<",">",".","/","?"];
-  var num  = ["1","2","3","4","5","6","7","8","9","0"];
+  var lwr    = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  var uppr   = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  var spec   = ["!","@","#","$","%","^","&","*","(",")","_","-","=","+","'","{","[","}","]","|",";",":",",","<",">",".","/","?"];
+  var num    = ["1","2","3","4","5","6","7","8","9","0"];
+  var lenght = "";
+  var cond;
+
 
 // Array to confirm charachter type
 
-var passcond;                             // for password conditions
-var confirmlenght;                        // to confirm password lenght
-var confirmlwr;                           // to confirm lower case
-var confirmuppr;                          // to confirm upper case
-var confirmnum;                           // to confirm numbers
-var confirmspec;                          // to confirm special characters
+  var passcond;                             // for password conditions
+  var confirmlenght;                        // to confirm password lenght
+  var confirmlwr;                           // to confirm lower case
+  var confirmuppr;                          // to confirm upper case
+  var confirmnum;                           // to confirm numbers
+  var confirmspec;                          // to confirm special characters
+
+
+// Function to generate password
+
+function generatePassword(){
+
+  // Ask the user about the lenght
+    var lenght = prompt ( " how long do you need your password to be? Choose between 8 and 128 characters. " );
+
+    // Loop if the answer isn't between 8 and 128
+    while (lenght < 8 && lenght > 128){
+      alert( " Your password should contain no more than 128 and no less than 8 characters");
+      var lenght = (prompt( " How long do you need your password to be? Choose between 8 and 128 charcters. " );
+    }
+
+    // Tell the user how many characters he chose
+    alert( " Would you like your password to have: " + lenght + " characters? " )
+
+
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
