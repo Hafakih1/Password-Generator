@@ -36,6 +36,11 @@ function generatePassword(){
     // Tell the user how many characters he chose
     alert( " Would you like your password to have: " + lenght + " characters? " )
 
+    //Confirm the conditions of the password with the user
+    var confirmlwr  = confirm ( " Do you want to include Lower Case Letters? " );
+    var confirmuppr = confirm ( " Do you want to include Upper Case Letters? " );
+    var confirmnum  = confirm ( " Do you want to include Numbers?  " );
+    var confirmspec = confirm ( " Do you want to include special Characters? " );
 
 }
 
