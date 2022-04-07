@@ -7,13 +7,10 @@
   var spec   = ["!","@","#","$","%","^","&","*","(",")","_","-","=","+","'","{","[","}","]","|",";",":",",","<",">",".","/","?"];
   var num    = ["1","2","3","4","5","6","7","8","9","0"];
   var lenght = "";
-  var cond;
 
 
 // Array to confirm charachter type
 
-  var passcond;                             // for password conditions
-  var confirmlenght;                        // to confirm password lenght
   var confirmlwr;                           // to confirm lower case
   var confirmuppr;                          // to confirm upper case
   var confirmnum;                           // to confirm numbers
@@ -28,12 +25,12 @@ function generatePassword(){
     var lenght = prompt ( " how long do you need your password to be? Choose between 8 and 128 characters. " );
 
       // Loop if the answer isn't between 8 and 128
-      while (lenght < 8 && lenght > 128){
+      while (lenght < 8 || lenght > 128){
         alert( " Your password should contain no more than 128 and no less than 8 characters");
         var lenght = (prompt( " How long do you need your password to be? Choose between 8 and 128 charcters. " ) );
       }
       // Tell the user how many characters he chose
-      alert( " Would you like your password to have: " + lenght + " characters? " );
+      alert( " Would you like your password to have " + lenght + " characters? " );
 
 
   //Confirm the conditions of the password with the user
@@ -58,7 +55,7 @@ function generatePassword(){
       if (confirmuppr){
         passcond = passcond.concat(uppr)
       }
-      if (confirmwlr){
+      if (confirmlwr){
         passcond = passcond.concat(lwr)
       }
       if (confirmnum){
@@ -70,12 +67,11 @@ function generatePassword(){
 
       console.log (passcond)
 
-  // if its empty
 
   var random = ""
 
-      for ( var i=0 ; i<lenght ; i++){
-        random = random + passcond [ Math.floor(Math.random() + passcond.lenght ) ];
+      for ( var i = 0 ; i < lenght ; i++ ) {
+        random = random + passcond [ Math.floor ( Math.random () * passcond.length ) ];
         console.log ( random )
       }
       return random;
@@ -85,6 +81,7 @@ function generatePassword(){
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+
 
 // Write password to the #password input
 function writePassword() {
